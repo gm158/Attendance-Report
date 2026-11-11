@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Report System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>Student Attendance Report System</h1>
+            <p>Calculate attendance rates, track absences, and determine student status.</p>
+        </header>
+
+        <main class="content">
+
+            <!-- Student Input -->
+            <section class="card">
+                <h2>Student & Attendance Input</h2>
+
+                <div class="form-group">
+                    <label for="studentName">Student Name:</label>
+                    <input type="text" id="studentName" placeholder="Enter student name">
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <input type="text" id="course" placeholder="Enter course">
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="text" id="year" placeholder="Enter year">
+                </div>
+
+                <div class="form-group">
+                    <label for="totalDays">Total School Days:</label>
+                    <input type="number" id="totalDays" min="0" placeholder="Enter total days">
+                </div>
+
+                <div class="form-group">
+                    <label for="attended">Days Attended:</label>
+                    <input type="number" id="attended" min="0" placeholder="Enter attended days">
+                </div>
+
+                <div class="form-group">
+                    <label for="absent">Days Absent:</label>
+                    <input type="number" id="absent" min="0" placeholder="Enter absent days">
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="autoCalculate" checked>
+                    <label for="autoCalculate">
+                        Auto-calculate absent days
+                    </label>
+                </div>
+
+                <div class="buttons">
+                    <button class="generate-btn" onclick="generateReport()">
+                        Generate Report
+                    </button>
+
+                    <button class="sample-btn" onclick="loadSampleData()">
+                        Load Sample Data
+                    </button>
+
+                    <button class="reset-btn" onclick="resetForm()">
+                        Reset Fields
+                    </button>
+                </div>
+            </section>
+
+            <!-- Analytics and Report -->
+            <section class="card">
+                <h2>Attendance Analytics & Standing</h2>
+
+                <div id="statusBadge" class="status-badge">
+                    AWAITING INPUT
+                </div>
+
+                <p id="statusDescription">
+                    Fill in the fields to calculate attendance.
+                </p>
+
+                <div class="progress-container">
+                    <div id="progressBar" class="progress-bar">
+                        0%
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <p id="attendanceValue">Attendance: --%</p>
+                    <p id="absentValue">Absent: --%</p>
+                    <p id="standingValue">Standing: --</p>
+                    <p>Passing Mark: ≥ 75%</p>
+                </div>
+
+                <div class="report-container">
+                    <h3>Official Report Output</h3>
+
+                    <textarea id="reportArea" readonly>
+No report generated yet.
+Enter student details and click Generate Report.
+                    </textarea>
+
+                    <button id="copyButton" onclick="copyReport()" disabled>
+                        Copy Report to Clipboard
+                    </button>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            Status criteria: Attendance ≥ 75% = Present |
+            Attendance < 75% = Needs Improvement
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

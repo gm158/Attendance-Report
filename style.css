@@ -1,0 +1,249 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f1f5f9;
+    color: #0f172a;
+    padding: 25px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #1e3a8a;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #475569;
+    font-size: 14px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 22px;
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #334155;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px #dbeafe;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 18px 0;
+    font-size: 13px;
+}
+
+.checkbox-group input {
+    cursor: pointer;
+}
+
+.buttons {
+    display: grid;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+button:hover:not(:disabled) {
+    opacity: 0.85;
+}
+
+.generate-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.sample-btn {
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+}
+
+.reset-btn {
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: #dc2626;
+}
+
+.status-badge {
+    display: inline-block;
+    background: #e2e8f0;
+    color: #64748b;
+    padding: 8px 13px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+#statusDescription {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.progress-container {
+    width: 100%;
+    height: 25px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #2563eb;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 25px;
+    transition: width 0.4s;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+#attendanceValue {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+#absentValue {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.report-container {
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    padding: 15px;
+}
+
+.report-container h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+#reportArea {
+    width: 100%;
+    height: 260px;
+    resize: vertical;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    background: white;
+    font-family: Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+#copyButton {
+    width: 100%;
+    margin-top: 10px;
+    background: #e2e8f0;
+    color: #334155;
+}
+
+#copyButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .metrics {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+}
